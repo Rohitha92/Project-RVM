@@ -2,7 +2,7 @@
  * main.cpp
  *
  *  Created on: Nov 17, 2017
- *      Author: Rohitha
+ *      Author: Rohitha Reddy Matta
  */
 
 #include "Machine.hpp"
@@ -16,15 +16,8 @@ int Cust_Bottle_Count=0;
 int Cust_Can_Count=0;
 double Cust_money_out=0;
 double new_money_out;
-/***Machine::Machine(){
-	Can_Count=0;
-	Bottle_Count=0;
-	Can_price=0.1;
-	Bottle_price=0.2;
-	money_out=0;
-	PIN = 1234;
-}***/
 
+//Class constructor- loading variables from text file
 Machine::Machine(){
 	ifstream input_file("admin_control.txt");
 	string line;
@@ -36,8 +29,10 @@ Machine::Machine(){
 	    }
 }
 
+//Class destructor
 Machine::~Machine(){}
 
+//member function to print transaction details to the customer
 void Machine::getMachineState(){
 	cout<< "Total cans collected: "<< Cust_Can_Count<<endl;
 	cout<< "Total PET bottles collected: "<< Cust_Bottle_Count<<endl;
@@ -48,11 +43,14 @@ void Machine::getMachineState(){
 	cout<< "Total price paid to customer: "<<Cust_money_out<<endl;
 }
 
+//function calculating the total money out for admin control(adding newly paid money in this transaction)
 double Machine::new_money(){
 	Cust_money_out = Bottle_price*Cust_Bottle_Count + Cust_Can_Count*Can_price;
 	new_money_out= money_out+ Cust_money_out;
 	return new_money_out;
 }
+
+//member function to retrieve total details for admin access only
 void Machine::admin_getMachineState(){
 	cout<< "Total cans collected: "<< Can_Count<<endl;
 	cout<< "Total PET bottles collected: "<< Bottle_Count<<endl;
@@ -63,6 +61,7 @@ void Machine::admin_getMachineState(){
 	cout<< "Total price paid to customer: "<<money_paid<<endl;
 }
 
+//member function to clear the admin details
 void Machine::Clear(){
 	Can_Count=0;
 	Bottle_Count=0;
@@ -70,6 +69,8 @@ void Machine::Clear(){
 	Bottle_price=0.10;
 	money_out=0;
 }
+
+//member function to maintain admin control input
 int Machine::admin_control(int a){
 	int new_pin;
 	switch(a){
@@ -86,7 +87,6 @@ int Machine::admin_control(int a){
 			cout<<"Getting Machine Stats..."<<endl;
 			Machine::admin_getMachineState();
 			return 2;
-			//Machine::Restart(2);
 			break;
 		}
 		case(2):{
@@ -123,12 +123,7 @@ int Machine::admin_control(int a){
 
 }
 
-
-void Machine::Restart(int case_x){
-	Machine::Init(case_x);
-}
-
-
+//start menu
 int entry(){
 	int start;
 	cout<<"Enter\n Start:1 \n Admin control:2 \n Exit:3"<<endl;
@@ -136,6 +131,7 @@ int entry(){
 	return start;
 }
 
+//member function for input error handling
 bool Machine::check_entry(int start){
 	while(cin.fail()){
 			cin.clear();
@@ -145,6 +141,7 @@ bool Machine::check_entry(int start){
 	return false;
 }
 
+//member function handling bottle/can insertion process
 int Machine::Bottle_Process(int b){
 	switch(b){
 		case(1):{
@@ -179,6 +176,7 @@ int Machine::Bottle_Process(int b){
 	}
 }
 
+#initializing the process. All function calls are made from here
 void Machine::Init(int start){
 	int item, entered_pin, admin1;
 	if(start==0)
@@ -265,5 +263,4 @@ int main(){
 	Machine A;
 	A.Init(0);
 	return 0;
-
 }
