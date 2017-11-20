@@ -1,5 +1,5 @@
 # Project-Envipco
-This is a C++ implementation of Reverse Vending Machine
+This is a C++ implementation of Reverse Vending Machine \n
 This code has the following primary operations:
      1. Collect and count Cans and Bottles (ignore other insertions)
      2. Print transaction details to the customer
