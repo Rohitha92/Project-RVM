@@ -27,7 +27,6 @@ public:
 	void Init(int x);
 	void getMachineState();
 	void admin_getMachineState();
-	int getPrice();
 	double new_money();
 	int admin_control(int a);
 	int Bottle_Process(int b);
