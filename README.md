@@ -9,8 +9,8 @@ This is a C++ implementation of Reverse Vending Machine <br />
     * Information of total bottles/cans collected and money paid in all the transactions 
     * Clear the above details 
 <br />
-## Script initialization: 
-   * Run main.cpp file 
-   * Current PIN: 2345  
+### Script initialization: 
+    * Run main.cpp file 
+    * Current PIN: 2345  
 <br />
 Any changes to admin control parameters can be done while running the script, without needing to change code.
