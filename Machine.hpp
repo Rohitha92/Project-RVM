@@ -2,7 +2,7 @@
  * Machine.h
  *
  *  Created on: Nov 17, 2017
- *      Author: Rohitha
+ *      Author: Rohitha Reddy Matta
  */
 
 #ifndef MACHINE_HPP_
@@ -22,20 +22,6 @@ private:
 	int PIN;
 public:
 	Machine();
-	/***friend std::istream& operator>>(std::istream& is, Machine& asd){
-		std::string line;
-		std::getline(is, line);
-        std::istringstream iss(line);
-
-		iss>> asd.Can_Count;
-		iss>> asd.Bottle_Count;
-		iss>> asd.Can_price;
-		iss>> asd.Bottle_price;
-		iss>> asd.money_out;
-		iss >> asd.PIN;
-		return is;
-	}***/
-
 	~Machine();
 
 	void Init(int x);
@@ -48,9 +34,7 @@ public:
 	void Restart(int y);
 	void Clear();
 	bool check_entry(int a);
-
 };
-
 
 
 
