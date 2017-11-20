@@ -10,6 +10,6 @@ This is a C++ implementation of Reverse Vending Machine <br />
     * Clear the above details 
 ### Script initialization: 
     * Run main.cpp file 
-    * Current PIN: 2345  
+    * Initial parameters-> Current PIN: 2345, Can price: 0.5, Bottle price: 0.2  
 <br />
 Any changes to admin control parameters can be done while running the script, without needing to change code.
