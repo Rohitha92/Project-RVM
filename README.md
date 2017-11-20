@@ -1,5 +1,5 @@
-# Project-Envipco
-This is a C++ implementation of Reverse Vending Machine <br />
+# Project-RVM
+This is a C++ implementation of Reverse Vending Machine(RVM) inspired from Envipco's RVM <br />
 ## This code has the following primary operations:
  1. Collect and count Cans and Bottles (ignore/throw error on other insertions)<br />
  2. Print transaction details to the customer <br />
